@@ -44,8 +44,7 @@ const tabs = [
 ];
 
 const FeatureTab = (
-  props: (typeof tabs)[number] & ComponentPropsWithoutRef<"div">,
-   selected: boolean
+  props: (typeof tabs)[number] & ComponentPropsWithoutRef<"div">
 ) => {
   const tabRef = useRef<HTMLDivElement>(null);
   const dotLottieRef = useRef<DotLottieCommonPlayer>(null);
@@ -94,15 +93,12 @@ const FeatureTab = (
       className="flex gap-4 border border-white/15 rounded-lg p-2.5 items-center lg:flex-1 relative"
       onClick={props.onClick}
     >
-      {/* {props.selected && (
-        
-      )} */}
       <motion.div
-          style={{
-            maskImage,
-          }}
-          className="absolute inset-0 m-px border border-[#A369FF] rounded-lg"
-        ></motion.div>
+        style={{
+          maskImage,
+        }}
+        className="absolute inset-0 m-px border border-[#A369FF] rounded-lg"
+      ></motion.div>
       <div className="h-12 w-12 border border-white/15 rounded-md inline-flex items-center justify-center">
         <DotLottiePlayer
           ref={dotLottieRef}
@@ -132,7 +128,6 @@ const Features = () => {
   const backgroundSize = useMotionTemplate`${backgroundPositionX}% auto`;
   const backgroundPosition = useMotionTemplate`${backgroundSizeX}% ${backgroundPositionY}`;
 
-  
   return (
     <section className="py-20 md:py-24">
       <div className="container">
